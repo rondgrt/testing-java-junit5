@@ -4,6 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
 import java.time.Duration;
 
@@ -45,5 +49,25 @@ class IndexControllerTest {
         assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
             Thread.sleep(2000);
         });
+    }
+
+    @Test
+    @EnabledOnOs(OS.LINUX)
+    void testMeOnLinuxOS() {
+    }
+
+    @Test
+    @EnabledOnOs(OS.WINDOWS)
+    void testMeOnWindosOS() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_8)
+    void testMeOnJava8() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_11)
+    void testMeOnJava11() {
     }
 }
