@@ -16,15 +16,15 @@ class IndexControllerTest {
     }
 
     @Test
-    @DisplayName("Test exception")
-    void oupsHandler() {
-        assertEquals("notimplemented", controller.oupsHandler());
-    }
-
-    @Test
     @DisplayName("Test proper View name is returned for index page")
     void index() {
         assertEquals("index", controller.index());
         assertEquals("index", controller.index(), "Wrong view name returned");
+    }
+
+    @Test
+    @DisplayName("Test exception")
+    void oupsHandler() {
+        assertThrows(ValueNotFoundException.class, () -> controller.oopsHandler());
     }
 }
