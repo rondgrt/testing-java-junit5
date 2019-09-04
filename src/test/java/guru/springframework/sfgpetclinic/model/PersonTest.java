@@ -16,4 +16,5 @@ class PersonTest {
                 () -> assertEquals("Joe", person.getFirstName(), "First name failed"),
                 () -> assertEquals("Buck", person.getLastName(), "Last name failed"));
     }
+
 }
