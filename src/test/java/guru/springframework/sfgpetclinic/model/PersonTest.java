@@ -1,10 +1,11 @@
 package guru.springframework.sfgpetclinic.model;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PersonTest {
+class PersonTest implements ModelBaseTest{
 
     @Test
     void groupedAssertions() {
@@ -17,4 +18,8 @@ class PersonTest {
                 () -> assertEquals("Buck", person.getLastName(), "Last name failed"));
     }
 
+    @RepeatedTest(2)
+    void repeteadTest() {
+        System.out.println("Nu run ik...");
+    }
 }
